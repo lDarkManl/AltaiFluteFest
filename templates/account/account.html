@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<a href="{% url 'account:logout' %}">Выйти</a>
+	{% if application is None %}
+		<p class="status">Статус: не подал</p>
+		<a href="{% url 'application:create_application' %}">Подать заявку</a>
+	{% else %}
+		<p class="status">Статус: {{ application.get_status_display }}</p>
+		<p>ИНФОРМАЦИЯ О ЗАЯВКЕ</p>
+		<a href="{% url 'application:change_application' application.id %}">Изменить заявку</a>
+		<a href="{% url 'application:delete_application' application.id %}">Удалить заявку</a>
+	{% endif %}
+
+{% endblock %}

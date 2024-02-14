@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<form action="{% url 'application:change_application' pk %}" method="POST">
+		{% csrf_token %}
+		{% include 'application/application.html' with application_form=application_form packages=packages %}
+		<input type="submit">
+	</form>
+
+{% endblock %}

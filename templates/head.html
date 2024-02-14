@@ -1,0 +1,30 @@
+{% load static %}
+<script src="{% static 'burger.js' %}"></script>
+<div class="wrap">
+	<header class="header">
+		<div class="container-header">
+			<div class="header-body">
+				<div class="header-burger" onclick="burgerMenu();">
+					<span></span>
+				</div>
+				<div class="logo">
+					<img src="{% static 'logo.png' %}" alt="">
+				</div>
+				
+				<nav class="header-menu">
+					<ul class="header-list">
+						<li class="header-link"><a href="#">АРТИСТЫ</a></li>
+						<li class="header-link"><a href="#">ФОТООТЧЁТ</a></li>
+						<li class="header-link"><a href="#">ОТЗЫВЫ</a></li>
+						<li class="header-link"><a href="#">ПАРТНЁРЫ</a></li>
+						<li class="header-link"><a href="#">ЛИЧНЫЙ КАБИНЕТ</a></li>
+					</ul>
+				</nav>
+				<div class="language">
+					<a href="" class="a-language"><img src="" alt="" class="img-language"></a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+</div>

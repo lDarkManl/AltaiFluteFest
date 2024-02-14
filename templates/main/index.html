@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="main-block">
+	<h1 id="insc-fest">AltaiFluteFest</h1>
+	<p id="insc-date">19 - 25 августа 2024</p>
+	<img src="{% static 'main.png' %}" alt="">
+</div>
+<div class="wrapper">
+	<div class="artists-block">
+		<h2 id="insc-artists">АРТИСТЫ</h2>
+		<div class="artists-pc">
+			{% for artist in artists %}
+				<div class="artist">
+					<img src="{{ artist.photo.url }}" alt="">
+					<p class="artist-name">{{ artist.name }}</p>
+					<p class="artist-description">{{ artist.description }}</p>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="artists-mobile">
+			<div class="arrow" id="arrow-left">
+				<img src="{% static 'left.png' %}" class="fa-solid fa-angles-left artist-btn" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev"></img>
+			</div>
+			<div id="carouselExampleDark" class="carousel carousel-dark slide artists-carousel" data-bs-ride="carousel">
+				<div class="carousel-inner">
+					{% for artist in artists %}
+						<div class="artist carousel-item">
+							<img src="{{ artist.photo.url }}" alt="">
+							<p class="artist-name">{{ artist.name }}</p>
+							<p class="artist-description">{{ artist.description }}</p>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="arrow" id="arrow-right">
+				<img src="{% static 'right.png' %}" class="fa-solid fa-angles-right artist-btn" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next"></img>
+			</div>
+		</div>
+	</div>
+	<div class="about-fest">
+		<h2 id="about-fest-mobile" class="about-fest-h">О ФЕСТИВАЛЕ</h2>
+		<div class="about-content">
+			<div class="about-text">
+				<h2 id="about-fest-pc" class="about-fest-h">О ФЕСТИВАЛЕ</h2>
+				<ul>
+					<li>Флейтовый фестиваль на Алтае 19 — 25 августа 2024. В течение 5-ти дней участникам представится возможность окунуться в атмосферу концертов, мастер-классов, экскурсий — совместить творческую работу с любованием горными пейзажами.</li>
+					<li>Целью фестиваля является повышение уровня владения инструментом среди начинающих и практикующих флейтистов. Уникальность данного мероприятия заключается в том, что в одном месте соберутся представители разных регионов и возрастов. Обмен опытом и новые знакомства — всё это ждёт участников.</li>
+					<li>Следует отметить, что место проведения фестиваля располагает не только к продуктивной работе, но и к хорошему отдыху. Звуки природы и флейт сольются в единую мелодию в августе этого года! В рамках фестиваля также предусмотрены курсы повышения квалификации. По окончанию фестиваля участникам будет выдан диплом.</li>
+				</ul>
+			</div>
+			<div class="about-phone">
+				<img src="{% static 'phone.png' %}" alt="">
+			</div>
+			<div class="about-photos">
+				<img src="{% static 'stachinskaya1.png' %}" alt="" id="top-photo">
+				<img src="{% static 'stachinskaya2.png' %}" alt="" id="bottom-photo">
+			</div>
+		</div>
+	</div>
+	<h2 class="insc-place">МЕСТО ПРОВЕДЕНИЯ</h2>
+	<div class="places">
+		<div class="place" id="first-place">
+			<p>Туристическая база <br>"Империя туризма"</p>
+			<img src="{% static 'image1.png' %}" alt="" id="img-place1">
+		</div>
+		<div class="place" id="second-place">
+			<img src="{% static 'image2.png' %}" alt="" id="img-place2">
+			<p id="down-p">Расположена в центре района озера Ая вдоль берега Катуни</p>
+		</div>
+		<div class="place" id="third-place">
+			<p>Находится в 500-х м от горного озера Ая.</p>
+			<img src="{% static 'image3.png' %}" alt="" id="img-place3">
+		</div>
+	</div>
+	<div class="down-arrow">
+		<img src="{% static 'down.png' %}" alt="">
+	</div>
+	<div class="map">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6572.142319831189!2d85.85796490802495!3d51.90163862293974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42c4570d33f3551f%3A0x1d26f281483ff3f3!2z0KLRg9GA0LjRgdGC0LjRh9C10YHQutC40Lkg0LrQvtC80L_Qu9C10LrRgSAi0JjQvNC_0LXRgNC40Y8g0YLRg9GA0LjQt9C80LAi!5e0!3m2!1sru!2sru!4v1707825804026!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
+</div>
+<script src="{% static 'index.js' %}"></script>
+{% endblock %}
