@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'AltaiFluteFest.wsgi.application'
 DATABASES = { 
     'default': { 
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'aff', 
-        'USER': 'root', 
-        'PASSWORD': 'BakurLox2004', 
-        'HOST': 'localhost', 
+        'NAME': 'default_db', 
+        'USER': 'gen_user', 
+        'PASSWORD': '3tg0{5m/W+zB6u', 
+        'HOST': '82.97.254.127', 
         'PORT': '3306',
     } 
 }
